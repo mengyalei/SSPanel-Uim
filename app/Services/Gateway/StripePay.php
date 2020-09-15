@@ -42,7 +42,7 @@ class StripePay extends AbstractPayment
         $price_exchanged = ((double)$price) / ($currency->rates->CNY);
 
         $source = Source::create([
-            'amount' => floor($price_exchanged * 100),
+            'amount' => ceil($price_exchanged * 100),
             'currency' => Config::get('stripe_currency'),
             'type' => $type,
             'redirect' => [
@@ -85,7 +85,7 @@ class StripePay extends AbstractPayment
         $price_exchanged = ((double)$price) / ($currency->rates->CNY);
 
         $source = Source::create([
-            'amount' => floor($price_exchanged * 100),
+            'amount' => ceil($price_exchanged * 100),
             'currency' => Config::get('stripe_currency'),
             'type' => $type,
             'redirect' => [
