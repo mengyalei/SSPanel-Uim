@@ -18,6 +18,8 @@ class Payment
     {
         $method = Config::get('payment_system');
         switch ($method) {
+            case ('stripe'):
+                return new StripePay();
             case ('codepay'):
                 return new Codepay();
             case ('doiampay'):
