@@ -177,8 +177,14 @@ $System_Config['enable_checkin_captcha'] = 'false';	//启用签到验证码
 
 
 //支付系统设置----------------------------------------------------------------------------------------
-#取值 none | codepay | trimepay | f2fpay | chenAlipay | paymentwall | spay |tomatopay | payjs
+#取值 none | codepay | trimepay | f2fpay | chenAlipay | paymentwall | spay |tomatopay | payjs | stripe
 $System_Config['payment_system']='none';
+
+# Stripe
+$System_Config['stripe_key'] = '';
+$System_Config['stripe_webhook_endpoint_secret'] = '';
+$System_Config['stripe_minimum_amount'] = 4;   // Stripe 支付接口可充值的最低金额
+$System_Config['stripe_currency'] = 'usd';     // 支付接口的默认货币，可以写 hkd usd 等
 
 #codepay码支付
 #wiki地址:https://goo.gl/dRwRDi  http://t.cn/RnsWjtB
