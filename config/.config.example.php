@@ -142,6 +142,11 @@ $System_Config['telegram_request_token']='';		//Telegram 机器人请求Key，�
 $System_Config['enable_mylivechat']='false';		//是否开启客服系统
 $System_Config['mylivechat_id']='null';			//客服系统ID
 
+#客服系统设置，注册地址 https://crisp.chat/
+$System_Config['enable_crisp']='false';		//是否开启客服系统
+$System_Config['crisp_id']='';			//客服系统ID ID查看路径：crisp.chat-->设置-->网站设置-->显示整合-->html
+
+
 # PushBear  基于微信模板的向关注了二维码的用户以微信方式推送消息 https://pushbear.ftqq.com/
 $System_Config['usePushBear'] = 'false';		// true 启用	false 禁用
 $System_Config['PushBear_sendkey'] = '';	//请填写您在PushBear获取的sendkey  请仔细检查勿粘贴错
