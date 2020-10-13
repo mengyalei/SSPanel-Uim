@@ -783,9 +783,41 @@ class UserController extends BaseController
         return $this->view()->assign('anns', $Anns)->display('user/announcement.tpl');
     }
 
-    public function tutorial($request, $response, $args)
+     public function tutorial($request, $response, $args)
     {
-        return $this->view()->display('user/tutorial.tpl');
+        
+         $ssr_sub_token = LinkController::GenerateSSRSubCode($this->user->id, 0);
+
+        $Ann = Ann::orderBy('date', 'desc')->first();
+
+        return $this->view()
+            ->assign('ssr_sub_token', $ssr_sub_token)
+            ->assign('ann', $Ann)
+            ->assign('mergeSub', Config::get('mergeSub'))
+            ->assign('subUrl', Config::get('subUrl'))
+            ->assign('user', $this->user)
+            ->registerClass('URL', URL::class)
+            ->assign('baseUrl', Config::get('baseUrl'))
+            ->display('user/tutorial.tpl');
+    }
+
+
+    public function tutorialmb($request, $response, $args)
+    {
+        
+         $ssr_sub_token = LinkController::GenerateSSRSubCode($this->user->id, 0);
+
+        $Ann = Ann::orderBy('date', 'desc')->first();
+
+        return $this->view()
+            ->assign('ssr_sub_token', $ssr_sub_token)
+            ->assign('ann', $Ann)
+            ->assign('mergeSub', Config::get('mergeSub'))
+            ->assign('subUrl', Config::get('subUrl'))
+            ->assign('user', $this->user)
+            ->registerClass('URL', URL::class)
+            ->assign('baseUrl', Config::get('baseUrl'))
+            ->display('user/tutorialmb.tpl');
     }
 
 
