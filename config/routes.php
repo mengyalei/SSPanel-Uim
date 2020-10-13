@@ -68,6 +68,7 @@ $app->group('/user', function () {
     $this->post('/checkin', App\Controllers\UserController::class . ':doCheckin');
     $this->get('/node', App\Controllers\UserController::class . ':node');
     $this->get('/tutorial', App\Controllers\UserController::class . ':tutorial');
+    $this->get('/tutorialmb', App\Controllers\UserController::class . ':tutorialmb');
     $this->get('/announcement', App\Controllers\UserController::class . ':announcement');
     $this->get('/donate', App\Controllers\UserController::class . ':donate');
     $this->get('/lookingglass', App\Controllers\UserController::class . ':lookingglass');
