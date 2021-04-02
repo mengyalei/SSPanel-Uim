@@ -20,6 +20,7 @@ class Config
     {
         return [
             'appName' => self::get('appName'),
+            'checkNodeIp' => self::get('checkNodeIp'),
             'version' => VERSION,
             'baseUrl' => self::get('baseUrl'),
             'min_port' => self::get('min_port'),
