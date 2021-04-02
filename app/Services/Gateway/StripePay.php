@@ -32,7 +32,7 @@ class StripePay extends AbstractPayment
         }
 
         $ch = curl_init();
-        $url = 'https://api.exchangeratesapi.io/latest?symbols=CNY&base='.strtoupper(Config::get('stripe_currency'));
+        $url = 'https://api.exchangerate-api.com/v4/latest/'.strtoupper(Config::get('stripe_currency'));
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_HEADER, 0);
